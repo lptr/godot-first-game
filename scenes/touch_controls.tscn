@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwjvtodg7jmxh"]
+[gd_scene load_steps=4 format=3 uid="uid://cwjvtodg7jmxh"]
+
+[ext_resource type="Script" uid="uid://c1akvwghiky7f" path="res://scripts/touch_controls.gd" id="1_6wx45"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_iywne"]
 noise_type = 3
@@ -10,6 +12,7 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_iywne")
 
 [node name="TouchControls" type="CanvasLayer"]
+script = ExtResource("1_6wx45")
 
 [node name="Left" type="TouchScreenButton" parent="."]
 position = Vector2(100, 450)

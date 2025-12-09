@@ -15,6 +15,11 @@ run/main_scene="uid://c66f2tiagg1sr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
