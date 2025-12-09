@@ -6,8 +6,8 @@
 noise_type = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_iywne"]
-width = 64
-height = 64
+width = 128
+height = 128
 generate_mipmaps = false
 noise = SubResource("FastNoiseLite_iywne")
 
@@ -15,16 +15,19 @@ noise = SubResource("FastNoiseLite_iywne")
 script = ExtResource("1_6wx45")
 
 [node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(100, 450)
+modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
+position = Vector2(64, 448)
 texture_normal = SubResource("NoiseTexture2D_iywne")
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(250, 450)
+modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
+position = Vector2(192, 448)
 texture_normal = SubResource("NoiseTexture2D_iywne")
 action = "ui_right"
 
 [node name="Jump" type="TouchScreenButton" parent="."]
-position = Vector2(950, 450)
+modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
+position = Vector2(960, 448)
 texture_normal = SubResource("NoiseTexture2D_iywne")
 action = "ui_accept"
