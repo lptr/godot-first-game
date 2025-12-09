@@ -16,7 +16,7 @@ concurrency:
 
 env:
   GODOT_VERSION: 4.5.1
-  EXPORT_PRESETS: Web
+  EXPORT_PRESET: Web
   EXPORT_PATH: build/web
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
           godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           relative_project_path: ./
           relative_export_path: ${{ env.EXPORT_PATH }}
-          presets_to_export: ${{ env.EXPORT_PRESETS }}
+          presets_to_export: ${{ env.EXPORT_PRESET }}
           cache: true
 
       - name: Show exported files
@@ -46,7 +46,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ${{ steps.export.outputs.build_directory }}
+          path: ${{ steps.export.outputs.build_directory }}/${{ env.EXPORT_PRESET }}
 
   deploy:
     environment:
