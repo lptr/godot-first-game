@@ -40,6 +40,9 @@ jobs:
           presets_to_export: ${{ env.EXPORT_PRESETS }}
           cache: true
 
+      - name: Show exported files
+        run: ls -R ${{ steps.export.outputs.build_directory }}
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
