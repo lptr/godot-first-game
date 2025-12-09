@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwjvtodg7jmxh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iywne"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_iywne"]
+width = 64
+height = 64
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_iywne")
+
+[node name="TouchControls" type="CanvasLayer"]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(100, 450)
+texture_normal = SubResource("NoiseTexture2D_iywne")
+action = "ui_left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(250, 450)
+texture_normal = SubResource("NoiseTexture2D_iywne")
+action = "ui_right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(950, 450)
+texture_normal = SubResource("NoiseTexture2D_iywne")
+action = "ui_accept"
