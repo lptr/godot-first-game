@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwjvtodg7jmxh"]
+[gd_scene load_steps=5 format=3 uid="uid://cwjvtodg7jmxh"]
 
 [ext_resource type="Script" uid="uid://c1akvwghiky7f" path="res://scripts/touch_controls.gd" id="1_6wx45"]
+[ext_resource type="Texture2D" uid="uid://cfsd4p82x83g" path="res://assets/sprites/knight.png" id="2_n26gd"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_iywne"]
-noise_type = 3
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e4pk"]
+atlas = ExtResource("2_n26gd")
+region = Rect2(6, 74, 18, 18)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_iywne"]
-width = 128
-height = 128
-generate_mipmaps = false
-noise = SubResource("FastNoiseLite_iywne")
+[sub_resource type="AtlasTexture" id="AtlasTexture_notdv"]
+atlas = ExtResource("2_n26gd")
+region = Rect2(103, 10, 18, 18)
 
 [node name="TouchControls" type="CanvasLayer"]
 script = ExtResource("1_6wx45")
@@ -17,17 +17,20 @@ script = ExtResource("1_6wx45")
 [node name="Left" type="TouchScreenButton" parent="."]
 modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
 position = Vector2(64, 448)
-texture_normal = SubResource("NoiseTexture2D_iywne")
-action = "ui_left"
-
-[node name="Right" type="TouchScreenButton" parent="."]
-modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
-position = Vector2(192, 448)
-texture_normal = SubResource("NoiseTexture2D_iywne")
-action = "ui_right"
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_6e4pk")
+action = "move_left"
 
 [node name="Jump" type="TouchScreenButton" parent="."]
 modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
 position = Vector2(960, 448)
-texture_normal = SubResource("NoiseTexture2D_iywne")
-action = "ui_accept"
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_notdv")
+action = "jump"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
+position = Vector2(208, 448)
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_6e4pk")
+action = "move_left"
