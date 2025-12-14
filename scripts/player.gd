@@ -36,9 +36,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Play animations
-	if direction == 0:
-		$Sprite.play("idle")
+	if is_on_floor():
+		if direction == 0:
+			$Sprite.play("idle")
+		else:
+			$Sprite.play("run")
 	else:
-		$Sprite.play("run")
+		$Sprite.play("jump")
 		
 	move_and_slide()
