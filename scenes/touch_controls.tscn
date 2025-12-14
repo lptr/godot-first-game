@@ -33,4 +33,4 @@ modulate = Color(0.9658908, 0.9658908, 0.9658908, 0.49803922)
 position = Vector2(208, 448)
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_6e4pk")
-action = "move_left"
+action = "move_right"
