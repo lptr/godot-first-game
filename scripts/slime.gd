@@ -8,6 +8,8 @@ var direction = 1
 func _process(delta: float) -> void:
 	if $RayCastRight.is_colliding():
 		direction = -1
+		$Sprite.flip_h = true
 	if $RayCastLeft.is_colliding():
 		direction = 1
+		$Sprite.flip_h = false
 	position.x += direction * SPEED * delta
